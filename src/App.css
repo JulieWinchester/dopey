@@ -1,0 +1,97 @@
+body {
+  background-color: #FAFAFA;
+}
+
+.App {
+  text-align: center;
+  max-width: 992px;
+  min-width: 360px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.img-shadow {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.top-spacing {
+  margin-top: 3vh;
+}
+
+.title {
+  font-weight: 400;
+}
+
+.subtitle {
+  font-weight: 200;
+}
+
+.bottom-divider {
+  margin: 1vh 0 1vh 0;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.middle-divider {
+  margin: 3vh 45vh 3vh 45vh;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+p {
+  font-size: 14px;
+}
+
+h4 {
+  margin-bottom: 3vh;
+}
+
+.footer {
+  color: #27487c;
+}
+
+.character-portrait-grid {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.character-portrait-container {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 20vh;
+}
+
+.character-portrait {
+  object-fit: cover;
+  object-position: 50% 0;
+  width: 15vh;
+  height: 15vh;
+}
+
+.character-portrait-name {
+  display: block;
+  margin-top: 1vh;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.media {
+  max-width: 768px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2vh;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px 8px 8px 8px;
+}
+
+.media-body {
+  width: 60%;
+}
+
+.media-image {
+  margin-left: 20px;
+  border: 1px solid #ececec;
+  width: 35%;
+}
