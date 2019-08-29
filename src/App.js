@@ -160,7 +160,14 @@ class App extends React.Component {
       currentCharacter: null,
       characters: shuffleArray(data.characters),
       sessions: data.sessions,
-      cover_img: data.cover_img,
+      coverImg: data.coverImg,
+      title: data.title,
+      subtitle: data.subtitle,
+      copy: data.copy,
+      characterListTitle: data.characterListTitle,
+      sessionsListTitle: data.sessionsListTitle,
+      author: data.author,
+      authorEmail: data.authorEmail
     }
   }
 
@@ -182,34 +189,26 @@ class App extends React.Component {
     return (
       <Container className="App">
         <Row className="justify-content-center App-header">
-          <Image src={this.state.cover_img} className="App-logo img-shadow" alt="logo" fluid />
+          <Image src={this.state.coverImg} className="App-logo img-shadow" alt="logo" fluid />
         </Row>
         <Row className="justify-content-center top-spacing" noGutters>
           <h2 className="title">
-            Dragons of Phandelver
+            {this.state.title}
           </h2>
         </Row>
         <Row className="justify-content-center" noGutters>
           <h5 className="subtitle">
-            A Mash-Up of Lost Mines of Phandelver and Dragon of Icespire Peak
+            {this.state.subtitle}
           </h5>
         </Row>
         <Row className="justify-content-center top-spacing" noGutters>
-          <p>
-            The frontier town of Phandalin is plagued by dragons! Locals have spotted great scaly beasts silhouetted through the clouds, livestock have gone missing, and copses of trees bear great scars of broken branches. No one knows exactly how many of the creatures there are or exactly what they look like, but the diversity of descriptions suggest more than one of the terrors lurks above. The least cautious among the locals note the similarity between recent events and the swarms of dragons that ravaged the sword coast over a generation ago, only to be beaten back by resourceful folk heroes.
-          </p>
-        </Row>
-        <Row className="justify-content-center" noGutters>
-          <p>
-            Beyond just the presence of the beasts, dragon panic has turned the already rough and tumble area even more chaotic. The merchant charter company overseeing mining in Phandalin has left town, creating peril and opportunity for both mundane prospectors and relic-hunters seeking after the region's arcane past. Mercenary goblins have been spotted in the forests, and lone travellers have been stalked by unexpected packs of ravenous hyenas. And more, who can say what nefarious forces are using the chaos to maneuver and scheme to achieve their dark ends? It is time again for capable individuals to rise to the challenge.
-          </p>
+          <p dangerouslySetInnerHTML={{__html: this.state.copy}} />
         </Row>
         <Row className="justify-content-center middle-divider" noGutters></Row>
 
-
         <Row className="justify-content-center">
           <h4>
-            Cast of Characters
+            {this.state.characterListTitle}
           </h4>
         </Row>
         <CharacterPortraitGrid 
@@ -224,30 +223,26 @@ class App extends React.Component {
         </Row>
 
         <Row className="justify-content-center middle-divider" noGutters></Row>
-
         <Row className="justify-content-center">
           <h4>
-            Sessions
+            {this.state.sessionsListTitle}
           </h4>
         </Row>
-
         <SessionsPane sessions={this.state.sessions} />
 
         <Row className="justify-content-center bottom-divider" noGutters></Row>
         <Row className="footer justify-content-center">
           <Col>
             <span>
-              Julie Winchester
+              {this.state.author}
             </span>
           </Col>
           <Col>
             <span>
-              julia.m.winchester@gmail.com
+              {this.state.authorEmail}
             </span>
           </Col>
-        </Row>
-
-
+        </Row>  
       </Container>
     );
   }

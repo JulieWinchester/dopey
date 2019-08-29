@@ -1,7 +1,12 @@
 {
-	"cover_img": "./images/cover.png",
+	"coverImg": "./images/cover.png",
 	"title": "Dragons of Phandelver",
 	"subtitle": "A Mash-Up of Lost Mines of Phandelver and Dragon of Icespire Peak",
+	"copy": "The frontier town of Phandalin is plagued by dragons! Locals have spotted great scaly beasts silhouetted through the clouds, livestock have gone missing, and copses of trees bear great scars of broken branches. No one knows exactly how many of the creatures there are or exactly what they look like, but the diversity of descriptions suggest more than one of the terrors lurks above. The least cautious among the locals note the similarity between recent events and the swarms of dragons that ravaged the sword coast over a generation ago, only to be beaten back by resourceful folk heroes.<br><br>Beyond just the presence of the beasts, dragon panic has turned the already rough and tumble area even more chaotic. The merchant charter company overseeing mining in Phandalin has left town, creating peril and opportunity for both mundane prospectors and relic-hunters seeking after the region's arcane past. Mercenary goblins have been spotted in the forests, and lone travellers have been stalked by unexpected packs of ravenous hyenas. And more, who can say what nefarious forces are using the chaos to maneuver and scheme to achieve their dark ends? It is time again for capable individuals to rise to the challenge.",
+	"characterListTitle": "Cast of Characters",
+	"sessionsListTitle": "Sessions",
+	"author": "Julie Winchester",
+	"authorEmail": "julia.m.winchester@gmail.com",
 	"characters": [
 		{
           "name": "Chappy Quickstep",
