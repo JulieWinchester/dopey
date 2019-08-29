@@ -22,6 +22,10 @@ body {
   margin-top: 3vh;
 }
 
+.bottom-spacing {
+  margin-bottom: 3vh;
+}
+
 .title {
   font-weight: 400;
 }
@@ -31,17 +35,18 @@ body {
 }
 
 .bottom-divider {
-  margin: 1vh 0 1vh 0;
+  margin: 5% 0 1vh 0;
   border-bottom: 1px solid rgba(0,0,0,0.12);
 }
 
 .middle-divider {
-  margin: 3vh 45vh 3vh 45vh;
+  margin: 3% 35% 3% 35%;
   border-bottom: 1px solid rgba(0,0,0,0.12);
 }
 
 p {
   font-size: 14px;
+  max-width: 800px;
 }
 
 h4 {
@@ -66,20 +71,26 @@ h4 {
 .character-portrait {
   object-fit: cover;
   object-position: 50% 0;
-  width: 15vh;
-  height: 15vh;
+  width: 100px;
+  height: 100px;
 }
 
-.character-portrait-name {
+a {
   display: block;
   margin-top: 1vh;
   font-weight: 100;
   font-size: 18px;
 }
 
-.media {
+.media-container {
   max-width: 768px;
   width: 90%;
+}
+
+.media {
+  max-width: 768px;
+  /*width: 90%;*/
+  max-height: 240px;
   margin: 0 auto;
   padding: 2vh;
   border: 1px solid rgba(0,0,0,0.12);
@@ -93,5 +104,22 @@ h4 {
 .media-image {
   margin-left: 20px;
   border: 1px solid #ececec;
-  width: 35%;
+  max-width: 50%;
+  max-height: 220px;
+}
+
+.return-link {
+  margin-top: -2%;
+}
+
+.session {
+  margin-top: 3%;
+}
+
+.icon-container {
+  color: #cecece;
+}
+
+.fa-times {
+  cursor: pointer;
 }

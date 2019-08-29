@@ -4,23 +4,19 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Media from 'react-bootstrap/Media';
 import Row from 'react-bootstrap/Row';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import data from './data.json';
 import './App.css';
 
-import cover from './images/cover.png';
-import chappy from './images/characters/chappy.jpg';
-import friendly from './images/characters/friendly.jpg';
-import nyoma from './images/characters/nyoma.png';
-import bounty from './images/characters/bounty.png';
-import pandjet from './images/characters/pandjet.png';
-
 function CharacterPortrait(props) {
-  console.log('Called CP once');
+  console.log(props.img);
   return (
     <Col key={props.name} className="character-portrait-container" sm={4} xs={6}>
-      <a href="">
+      <a href="#" onClick={props.onClick}>
         <Image src={props.img} className="character-portrait img-shadow" alt={props.name} />
       </a>
-      <a href="" className="character-portrait-name text-info">{props.name}</a>
+      <a href="#" onClick={props.onClick} className="character-portrait-name text-info">{props.name}</a>
     </Col>
   );
 }
@@ -38,11 +34,12 @@ function shuffleArray(array) {
 }
 
 function CharacterPortraitGrid(props) {
-  const grid = shuffleArray(props.characters).map((character) => {
+  let grid = props.characters.map((character, i) => {
     return (
       <CharacterPortrait key={character.name}
         name={character.name}
         img={character.img}
+        onClick={(e) => props.onClick(i, e)}
       />
     );
   });
@@ -55,60 +52,137 @@ function CharacterPortraitGrid(props) {
 }
 
 function CharacterCard(props) {
+  if (!props.character) {
+    return null;
+  }
+
   return (
-    <Media>
-          <Media.Body>
-            <h5>{props.character.name}</h5>
-            <p>{props.character.desc}</p>
-          </Media.Body>
-          <img
-            className="align-self-center media-image"
-            src={props.character.img}
-            alt={props.character.name}
-          />
-    </Media>
+    <Row className="justify-content-center media-container">
+      <Col xs={11}>
+      <Media className="">
+            <Media.Body className="align-self-center">
+              <h5>{props.character.name}</h5>
+              <p>{props.character.desc}</p>
+            </Media.Body>
+            <Image
+              className="align-self-center media-image"
+              src={props.character.img}
+              alt={props.character.name}
+              rounded
+            />
+      </Media>
+      </Col>
+      <Col xs={0.5} className="icon-container">
+      <FontAwesomeIcon icon={faTimes} size="lg" onClick={props.onClick} />
+      </Col>
+    </Row>
   );
+}
+
+function Session(props) {
+  return (
+    <div className="session">
+      <Row className="justify-content-center">
+        <h4>
+          {props.session.name}
+        </h4>
+      </Row>
+      <Row className="justify-content-center" noGutters>
+        <p>
+          {props.session.desc}
+        </p>
+      </Row>
+    </div>
+  );
+}
+
+function SessionsList(props) {
+  let sessions = props.sessions.map((session, i) => {
+    return (
+      <Row key={i} className='justify-content-center'>
+        <a className="text-info" href="#" onClick={(e) => props.onClick(i, e)}>{session.name}</a>
+      </Row>
+    );
+  });
+
+  return (
+    <div>
+      {sessions}
+    </div>
+  );
+}
+
+class SessionsPane extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current: null,
+    }
+  }
+
+  handleClick(i, e) {
+    e.preventDefault();
+    this.setState({
+      current: i,
+    });
+  }
+
+  handleReturnClick(e) {
+    e.preventDefault();
+    this.setState({
+      current: null,
+    });
+  }
+
+  render() {
+    if (this.state.current === null) {
+      return(
+        <SessionsList 
+          sessions={this.props.sessions}
+          onClick={(i, e) => this.handleClick(i, e)} 
+        />
+      );  
+    } else {
+      return (
+        <div>
+          <a className="return-link" href="#" onClick={(e) => this.handleReturnClick(e)}>Return To List of Sessions</a>
+          <Session session={this.props.sessions[this.state.current]} />
+        </div>
+      );
+    }
+  }
 }
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: [
-        {
-          name: "Chappy Quickstep",
-          desc: "Level 2 Halfing Bard.",
-          img: chappy
-        },
-        {
-          name: "Friendly",
-          desc: "Level 2 Firbolg Druid.",
-          img: friendly
-        },
-        {
-          name: "Nyoma Izarren",
-          desc: "Level 2 Tiefling Warlock.",
-          img: nyoma
-        },
-        {
-          name: "Bounty of Nonsense",
-          desc: "Level 2 Tabaxi Rogue.",
-          img: bounty
-        },
-        {
-          name: "Prexijandilin Pandjet",
-          desc: "Level 2 Dragonborn Paladin.",
-          img: pandjet
-        },
-      ]
+      currentCharacter: null,
+      characters: shuffleArray(data.characters),
+      sessions: data.sessions,
+      cover_img: data.cover_img,
     }
+  }
+
+  handleClick(i, e) {
+    e.preventDefault();
+    this.setState({
+      currentCharacter: this.state.characters[i],
+    });
+  }
+
+  handleCardCloseClick(e) {
+    e.preventDefault();
+    this.setState({
+      currentCharacter: null,
+    });
   }
 
   render() {
     return (
       <Container className="App">
         <Row className="justify-content-center App-header">
-          <Image src={cover} className="App-logo img-shadow" alt="logo" fluid />
+          <Image src={this.state.cover_img} className="App-logo img-shadow" alt="logo" fluid />
         </Row>
         <Row className="justify-content-center top-spacing" noGutters>
           <h2 className="title">
@@ -131,13 +205,34 @@ class App extends React.Component {
           </p>
         </Row>
         <Row className="justify-content-center middle-divider" noGutters></Row>
+
+
         <Row className="justify-content-center">
           <h4>
             Cast of Characters
           </h4>
         </Row>
-        <CharacterPortraitGrid characters={this.state.characters} />
-        <CharacterCard character={this.state.characters[2]} />
+        <CharacterPortraitGrid 
+          characters={this.state.characters} 
+          onClick={(i, e) => this.handleClick(i, e)}
+        />
+        <Row className="justify-content-center top-spacing bottom-spacing">
+          <CharacterCard 
+            character={this.state.currentCharacter} 
+            onClick={(e) => this.handleCardCloseClick(e)} 
+          />
+        </Row>
+
+        <Row className="justify-content-center middle-divider" noGutters></Row>
+
+        <Row className="justify-content-center">
+          <h4>
+            Sessions
+          </h4>
+        </Row>
+
+        <SessionsPane sessions={this.state.sessions} />
+
         <Row className="justify-content-center bottom-divider" noGutters></Row>
         <Row className="footer justify-content-center">
           <Col>
@@ -151,11 +246,13 @@ class App extends React.Component {
             </span>
           </Col>
         </Row>
+
+
       </Container>
     );
   }
 }
 
-// TODO: Set up state to reflect currently displayed character, then create an onclick handler to pass down to character portraits that when clicked changes that state, I think that should result in updated card?
+// TODO: Add action for character pane close, deploy, export text to JSON
 
 export default App;
