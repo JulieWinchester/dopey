@@ -196,9 +196,7 @@ class App extends React.Component {
   render() {
     return (
       <Container className="App">
-        <Row className="justify-content-center App-header">
-          <Image src={this.state.coverImg} className="App-logo img-shadow" alt="logo" />
-        </Row>
+        <img src={this.state.coverImg} className="App-logo img-shadow" alt="logo" />
         <Row className="justify-content-center top-spacing" noGutters>
           <h2 className="title">
             {this.state.title}
