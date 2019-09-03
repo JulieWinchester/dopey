@@ -1,22 +1,23 @@
 import React from 'react';
+import SessionDescriptions from './SessionDescriptions.js';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Media from 'react-bootstrap/Media';
 import Row from 'react-bootstrap/Row';
+import ScrollableAnchor from 'react-scrollable-anchor'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import data from './data.json';
 import './App.css';
 
 function CharacterPortrait(props) {
-  console.log(props.img);
   return (
     <Col key={props.name} className="character-portrait-container" sm={4} xs={6}>
-      <a href="#" onClick={props.onClick}>
+      <a href="#card" onClick={props.onClick}>
         <Image src={props.img} className="character-portrait img-shadow" alt={props.name} />
       </a>
-      <a href="#" onClick={props.onClick} className="character-portrait-name text-info">{props.name}</a>
+      <a href="#card" onClick={props.onClick} className="character-portrait-name text-info">{props.name}</a>
     </Col>
   );
 }
@@ -87,10 +88,11 @@ function Session(props) {
           {props.session.name}
         </h4>
       </Row>
+      <Row className="justify-content-center">
+        <a className="return-link" href="#session" onClick={props.onClick}>Return To List of Sessions</a>
+      </Row>
       <Row className="justify-content-center" noGutters>
-        <p>
-          {props.session.desc}
-        </p>
+        <SessionDescriptions session={props.session.number} />
       </Row>
     </div>
   );
@@ -100,7 +102,7 @@ function SessionsList(props) {
   let sessions = props.sessions.map((session, i) => {
     return (
       <Row key={i} className='justify-content-center'>
-        <a className="text-info" href="#" onClick={(e) => props.onClick(i, e)}>{session.name}</a>
+        <a className="text-info" href="#session" onClick={(e) => props.onClick(i, e)}>{session.name}</a>
       </Row>
     );
   });
@@ -121,14 +123,14 @@ class SessionsPane extends React.Component {
   }
 
   handleClick(i, e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({
       current: i,
     });
   }
 
   handleReturnClick(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({
       current: null,
     });
@@ -137,16 +139,22 @@ class SessionsPane extends React.Component {
   render() {
     if (this.state.current === null) {
       return(
-        <SessionsList 
-          sessions={this.props.sessions}
-          onClick={(i, e) => this.handleClick(i, e)} 
-        />
+        <div>
+          <Row className="justify-content-center">
+            <h4>
+              {this.props.title}
+            </h4>
+          </Row>
+          <SessionsList 
+            sessions={this.props.sessions}
+            onClick={(i, e) => this.handleClick(i, e)} 
+          />
+        </div>
       );  
     } else {
       return (
         <div>
-          <a className="return-link" href="#" onClick={(e) => this.handleReturnClick(e)}>Return To List of Sessions</a>
-          <Session session={this.props.sessions[this.state.current]} />
+          <Session session={this.props.sessions[this.state.current]} onClick={(e) => this.handleReturnClick(e)}  />
         </div>
       );
     }
@@ -167,12 +175,12 @@ class App extends React.Component {
       characterListTitle: data.characterListTitle,
       sessionsListTitle: data.sessionsListTitle,
       author: data.author,
-      authorEmail: data.authorEmail
+      authorEmail: data.authorEmail,
+      testVar: "",
     }
   }
 
   handleClick(i, e) {
-    e.preventDefault();
     this.setState({
       currentCharacter: this.state.characters[i],
     });
@@ -189,7 +197,7 @@ class App extends React.Component {
     return (
       <Container className="App">
         <Row className="justify-content-center App-header">
-          <Image src={this.state.coverImg} className="App-logo img-shadow" alt="logo" fluid />
+          <Image src={this.state.coverImg} className="App-logo img-shadow" alt="logo" />
         </Row>
         <Row className="justify-content-center top-spacing" noGutters>
           <h2 className="title">
@@ -215,20 +223,20 @@ class App extends React.Component {
           characters={this.state.characters} 
           onClick={(i, e) => this.handleClick(i, e)}
         />
-        <Row className="justify-content-center top-spacing bottom-spacing">
-          <CharacterCard 
-            character={this.state.currentCharacter} 
-            onClick={(e) => this.handleCardCloseClick(e)} 
-          />
-        </Row>
+        <ScrollableAnchor id={'card'}>
+          <Row className="justify-content-center top-spacing bottom-spacing">
+            <CharacterCard 
+              character={this.state.currentCharacter} 
+              onClick={(e) => this.handleCardCloseClick(e)} 
+            />
+          </Row>
+        </ScrollableAnchor>
 
-        <Row className="justify-content-center middle-divider" noGutters></Row>
-        <Row className="justify-content-center">
-          <h4>
-            {this.state.sessionsListTitle}
-          </h4>
-        </Row>
-        <SessionsPane sessions={this.state.sessions} />
+        <ScrollableAnchor id={'session'}>
+          <Row className="justify-content-center middle-divider" noGutters></Row>
+        </ScrollableAnchor>
+        
+        <SessionsPane sessions={this.state.sessions} title={this.state.sessionsListTitle} />
 
         <Row className="justify-content-center bottom-divider" noGutters></Row>
         <Row className="footer justify-content-center">
@@ -247,7 +255,5 @@ class App extends React.Component {
     );
   }
 }
-
-// TODO: Add action for character pane close, deploy, export text to JSON
 
 export default App;
