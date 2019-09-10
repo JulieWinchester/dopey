@@ -36,8 +36,12 @@
 	],
 	"sessions": [
 		{
-          "name": "Session 1: Chaos at the Cragmaw Caves",
-          "number": 1
-        }
+      "name": "Session 1: Chaos at the Cragmaw Caves",
+      "number": 1
+    },
+    {
+      "name": "Session 2: Quiet Town, Dark Secrets",
+      "number": 2
+    }
 	]
 }
