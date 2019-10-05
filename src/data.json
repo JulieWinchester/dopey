@@ -10,27 +10,27 @@
 	"characters": [
 		{
           "name": "Chappy Quickstep",
-          "desc": "Level 2 Halfing Bard.",
+          "desc": "Level 3 Halfing Bard.",
           "img": "./images/characters/chappy.jpg"
         },
         {
           "name": "Friendly",
-          "desc": "Level 2 Firbolg Druid.",
+          "desc": "Level 3 Firbolg Druid.",
           "img": "./images/characters/friendly.jpg"
         },
         {
           "name": "Nyoma Izarren",
-          "desc": "Level 2 Tiefling Warlock.",
+          "desc": "Level 3 Tiefling Warlock.",
           "img": "./images/characters/nyoma.png"
         },
         {
           "name": "Bounty of Nonsense",
-          "desc": "Level 2 Tabaxi Rogue.",
+          "desc": "Level 3 Tabaxi Rogue.",
           "img": "./images/characters/bounty.png"
         },
         {
           "name": "Prexijandilin Pandjet",
-          "desc": "Level 2 Dragonborn Paladin.",
+          "desc": "Level 3 Dragonborn Paladin.",
           "img": "./images/characters/pandjet.png"
         }
 	],
@@ -42,6 +42,10 @@
     {
       "name": "Session 2: Quiet Town, Dark Secrets",
       "number": 2
+    },
+    {
+      "name": "Session 3: Things Unexpected In The Dark",
+      "number": 3
     }
 	]
 }
