@@ -36,7 +36,7 @@
 	],
 	"sessions": [
 		{
-      "name": "Session 1: Chaos at the Cragmaw Caves",
+      "name": "Session 1: Chaos At The Cragmaw Caves",
       "number": 1
     },
     {
@@ -54,6 +54,10 @@
     {
       "name": "Session 5: The Day The Sun Never Came",
       "number": 5
+    },
+    {
+      "name": "Session 6: Dunnsala And The Shrine of Savras",
+      "number": 6
     }
 	]
 }
