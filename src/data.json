@@ -10,27 +10,32 @@
 	"characters": [
 		{
           "name": "Chappy Quickstep",
-          "desc": "Level 3 Halfing Bard.",
+          "desc": "Level 4 Halfing Bard.",
+          "imgpixel": "./images/characters/chappy_pixel.jpg",
           "img": "./images/characters/chappy.jpg"
         },
         {
-          "name": "Friendly",
-          "desc": "Level 3 Firbolg Druid.",
-          "img": "./images/characters/friendly.jpg"
+          "name": "Enoch",
+          "desc": "Level 4 Human Fighter.",
+          "imgpixel": "./images/characters/enoch_pixel.jpg",
+          "img": "./images/characters/enoch_pixel.jpg"
         },
         {
           "name": "Nyoma Izarren",
-          "desc": "Level 3 Tiefling Warlock.",
+          "desc": "Level 4 Tiefling Warlock.",
+          "imgpixel": "./images/characters/nyoma_pixel.jpg",
           "img": "./images/characters/nyoma.png"
         },
         {
           "name": "Bounty of Nonsense",
-          "desc": "Level 3 Tabaxi Rogue.",
+          "desc": "Level 4 Tabaxi Rogue.",
+          "imgpixel": "./images/characters/bount_pixel.jpg",
           "img": "./images/characters/bounty.png"
         },
         {
           "name": "Prexijandilin Pandjet",
-          "desc": "Level 3 Dragonborn Paladin.",
+          "desc": "Level 4 Dragonborn Paladin.",
+          "imgpixel": "./images/characters/pandjed_pixel.jpg",
           "img": "./images/characters/pandjet.png"
         }
 	],
@@ -58,6 +63,10 @@
     {
       "name": "Session 6: Dunnsala And The Shrine of Savras",
       "number": 6
+    },
+    {
+      "name": "Session 7: Dunnsala And The Black River",
+      "number": 7
     }
 	]
 }

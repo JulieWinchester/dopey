@@ -39,7 +39,7 @@ function CharacterPortraitGrid(props) {
     return (
       <CharacterPortrait key={character.name}
         name={character.name}
-        img={character.img}
+        img={character.imgpixel}
         onClick={(e) => props.onClick(i, e)}
       />
     );
