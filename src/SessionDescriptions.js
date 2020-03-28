@@ -206,6 +206,14 @@ function SessionDescriptions(props) {
         <p>Some hours later, a large party of turtles – with salamander mounts – has met a coterie of foxes – with chicken-legged houses – at the sod house, to hammer out a peace agreement, with the characters mediating between the two. But before negotiations can begin, a dreadful rumbling is heard in the trees at the edge of the clearing. This is followed by a sudden and raucous fearful quailing from the margins of the crowd of turtles and foxes. "Oh, no, oh, heavens no!" Is heard shouted  from one bystander. "What in the name of the heavens have we done to anger the PRINCE so DREADFULLY?" screams another. And all at once, the clearing is overrun by a hoard of giant, monstrous, shadowy spiders!</p>
       </div>
     );
+  } else if (props.session === 11) {
+    return (
+      <div>
+        <p>The party tangles with a disgusting eight-legged flood! The great spider swarm seems to be led by a gigantic, grotesque, long sinewy hunter-predator creature that stalks through the crowd slaying the screaming and cowering turtles and foxes. Skittering behind the great black arachnid come two dog-sized spiders as pale as rotten milk with scorpion tails, who sting and sting and sting at corpses which then rise as undead revenants to serve the creatures. The adventurers swallow their disgust, and leap forward to protect their newly-found animalfolk acquaintances. As the battle progresses, Chappy and Bount end up fighting back to back against an enveloping arachnid horde, protecting each other with blade and spell, trying to stay conscious against the many small bites sending venom into their veins. Nyoma is bedeviled by webs flung her way, paralyzing her until a fit of metaphorical and literal incendiary passion sees the tiefling warlock burst into a coruscating halo of red and green flame. She strikes and burns and melts a succession of many-legged creatures to protect a gathering crowd of animalfolk at the sod hut. And Pandjed carves his own way through the arachnid mess, bringing his heavy warhammer down over and over in crushing blows that explode spiders and splash their inner gore outward to mark the Feywild soil.</p>
+        <p>The largest, bulbous, dark-bodied creature falls after a desperate struggle, bleeding and leaking black shadow-stuff instead of blood. But when it dies, an explosion of confetti appears? And on the ground, a crisp bone-ivory envelope of fine make. After the adventurers at last wipe the rest of the spider swarm from the land, they are able to finally breathe and the Dragonborn paladin picks up the envelope. Inside is delicate parchment, which reads:</p>
+        <img src="./images/session_11_invitation.jpg" className="session-img img-shadow" alt="Session 11 Invitation" />
+      </div>
+    );
   } else {
     return null;
   }
