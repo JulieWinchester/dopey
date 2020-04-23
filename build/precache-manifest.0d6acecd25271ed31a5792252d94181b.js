@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7f4c4a58df24975f6b00cb2e4ee60360",
+    "revision": "7889e368765519067ba3191bf6ec043e",
     "url": "/dnd/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dnd/static/css/2.266e55a5.chunk.css"
   },
   {
-    "revision": "97fbe2da3c37ab8fb5c9",
+    "revision": "a6669c6fc38c944a9f89",
     "url": "/dnd/static/css/main.60027f9a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dnd/static/js/2.83e7a7bb.chunk.js"
   },
   {
-    "revision": "97fbe2da3c37ab8fb5c9",
-    "url": "/dnd/static/js/main.329f87c1.chunk.js"
+    "revision": "a6669c6fc38c944a9f89",
+    "url": "/dnd/static/js/main.ca2e7268.chunk.js"
   },
   {
     "revision": "f459ec4b6944d25afa2f",
