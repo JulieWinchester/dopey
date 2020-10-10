@@ -174,6 +174,8 @@ class App extends React.Component {
       copy: data.copy,
       characterListTitle: data.characterListTitle,
       sessionsListTitle: data.sessionsListTitle,
+      graveyardTitle: data.graveyardTitle,
+      graveyard: data.graveyard,
       author: data.author,
       authorEmail: data.authorEmail,
       testVar: "",
@@ -230,10 +232,27 @@ class App extends React.Component {
           </Row>
         </ScrollableAnchor>
 
+        <Row className="justify-content-center middle-divider" noGutters></Row>
+
+        <Row className="justify-content-center">
+          <h4>
+            {this.state.graveyardTitle}
+          </h4>
+        </Row>
+        <Row className="justify-content-center top-spacing" noGutters>
+          <p dangerouslySetInnerHTML={{__html: this.state.graveyard[0]}} />
+        </Row>
+        <Row className="justify-content-center top-spacing" noGutters>
+          <p dangerouslySetInnerHTML={{__html: this.state.graveyard[1]}} />
+        </Row>
+        <Row className="justify-content-center top-spacing" noGutters>
+          <p dangerouslySetInnerHTML={{__html: this.state.graveyard[2]}} />
+        </Row>
+
         <ScrollableAnchor id={'session'}>
           <Row className="justify-content-center middle-divider" noGutters></Row>
         </ScrollableAnchor>
-        
+
         <SessionsPane sessions={this.state.sessions} title={this.state.sessionsListTitle} />
 
         <Row className="justify-content-center bottom-divider" noGutters></Row>

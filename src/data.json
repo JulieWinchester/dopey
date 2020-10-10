@@ -4,41 +4,41 @@
 	"subtitle": "A Mash-Up of Lost Mines of Phandelver and Dragon of Icespire Peak",
 	"copy": "The frontier town of Phandalin is plagued by dragons! Locals have spotted great scaly beasts silhouetted through the clouds, livestock have gone missing, and copses of trees bear great scars of broken branches. No one knows exactly how many of the creatures there are or exactly what they look like, but the diversity of descriptions suggest more than one of the terrors lurks above. The least cautious among the locals note the similarity between recent events and the swarms of dragons that ravaged the sword coast over a generation ago, only to be beaten back by resourceful folk heroes.<br><br>Beyond just the presence of the beasts, dragon panic has turned the already rough and tumble area even more chaotic. The merchant charter company overseeing mining in Phandalin has left town, creating peril and opportunity for both mundane prospectors and relic-hunters seeking after the region's arcane past. Mercenary goblins have been spotted in the forests, and lone travellers have been stalked by unexpected packs of ravenous hyenas. And more, who can say what nefarious forces are using the chaos to maneuver and scheme to achieve their dark ends? It is time again for capable individuals to rise to the challenge.",
 	"characterListTitle": "Cast of Characters",
+  "graveyardTitle": "Former Companions",
 	"sessionsListTitle": "Sessions",
 	"author": "Julie Winchester",
 	"authorEmail": "julia.m.winchester@gmail.com",
 	"characters": [
 		{
-          "name": "Chappy Quickstep",
-          "desc": "Level 4 Halfing Bard.",
-          "imgpixel": "./images/characters/chappy_pixel.jpg",
-          "img": "./images/characters/chappy.jpg"
-        },
-        {
-          "name": "Enoch",
-          "desc": "Level 4 Human Fighter.",
-          "imgpixel": "./images/characters/enoch_pixel.jpg",
-          "img": "./images/characters/enoch_pixel.jpg"
+          "name": "Wayez",
+          "desc": "Level 5 Faerie (Ice Genasi) Druid.",
+          "imgpixel": "./images/characters/wayez_pixel.jpg",
+          "img": "./images/characters/wayez.jpg"
         },
         {
           "name": "Nyoma Izarren",
-          "desc": "Level 4 Tiefling Warlock.",
+          "desc": "Level 5 Tiefling Warlock.",
           "imgpixel": "./images/characters/nyoma_pixel.jpg",
           "img": "./images/characters/nyoma.png"
         },
         {
           "name": "Bounty of Nonsense",
-          "desc": "Level 4 Tabaxi Rogue.",
+          "desc": "Level 5 Tabaxi Rogue.",
           "imgpixel": "./images/characters/bount_pixel.jpg",
           "img": "./images/characters/bounty.png"
         },
         {
           "name": "Prexijandilin Pandjet",
-          "desc": "Level 4 Dragonborn Paladin.",
+          "desc": "Level 5 Dragonborn Paladin.",
           "imgpixel": "./images/characters/pandjed_pixel.jpg",
           "img": "./images/characters/pandjet.png"
         }
 	],
+  "graveyard": [
+    "Chappy Quickstep. Level 5 Halfling Bard. Retired to Butterskull.",
+    "Enoch the Swordsman. Level 4 Human Fighter. Lost in Time and Space.",
+    "Friendly. Level 2 Firbolg Druid. Not as friendly as advertised."
+  ],
 	"sessions": [
 		{
       "name": "Session 1: Chaos At The Cragmaw Caves",
